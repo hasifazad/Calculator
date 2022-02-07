@@ -14,28 +14,41 @@
     <div class="calculator">
         <input class="textarea" id="textarea" type="text">
         <div class="button">
-            <button id="b-1" class="buttons brow-1 bcol-1">1</button>
-            <button id="b-2" class="buttons brow-1 bcol-2">2</button>
-            <button id="b-3" class="buttons brow-1 bcol-3">3</button>
-            <button id="b-div" class="buttons brow-1 bcol-4">/</button>
+            <button id="b-1" class="buttons brow-1 bcol-1" onclick="display(1)">1</button>
+            <button id="b-2" class="buttons brow-1 bcol-2" onclick="display(2)">2</button>
+            <button id="b-3" class="buttons brow-1 bcol-3" onclick="display(3)">3</button>
+            <button id="b-div" class="buttons brow-1 bcol-4" onclick="display('/')">/</button>
             <br>
-            <button id="b-4" class="buttons brow-2 bcol-1">4</button>
-            <button id="b-5" class="buttons brow-2 bcol-2">5</button>
-            <button id="b-6" class="buttons brow-2 bcol-3">6</button>
-            <button id="b-mul" class="buttons brow-2 bcol-4">*</button>
+            <button id="b-4" class="buttons brow-2 bcol-1" onclick="display(4)">4</button>
+            <button id="b-5" class="buttons brow-2 bcol-2" onclick="display(5)">5</button>
+            <button id="b-6" class="buttons brow-2 bcol-3" onclick="display(6)">6</button>
+            <button id="b-mul" class="buttons brow-2 bcol-4" onclick="display('*')">*</button>
             <br>
-            <button id="b7" class="buttons brow-3 bcol-1">7</button>
-            <button id="b8" class="buttons brow-3 bcol-2">8</button>
-            <button id="b9" class="buttons brow-3 bcol-3">9</button>
-            <button id="b-add" class="buttons brow-3 bcol-4">+</button>
+            <button id="b7" class="buttons brow-3 bcol-1" onclick="display(7)">7</button>
+            <button id="b8" class="buttons brow-3 bcol-2" onclick="display(8)">8</button>
+            <button id="b9" class="buttons brow-3 bcol-3" onclick="display(9)">9</button>
+            <button id="b-add" class="buttons brow-3 bcol-4" onclick="display('+')">+</button>
             <br>
-            <button id="b0" class="buttons brow-4 bcol-1">0</button>
-            <button id="bdot" class="buttons brow-4 bcol-2">.</button>
-            <button id="b-equal" class="buttons brow-4 bcol-3">=</button>
-            <button id="b-sub" class="buttons brow-4 bcol-4">-</button>
-            <button id="clear" class="buttons brow-4 clear">C</button>
+            <button id="b0" class="buttons brow-4 bcol-1" onclick="display(0)">0</button>
+            <button id="bdot" class="buttons brow-4 bcol-2" onclick="display('.')">.</button>
+            <button id="b-equal" class="buttons brow-4 bcol-3" onclick="result()">=</button>
+            <button id="b-sub" class="buttons brow-4 bcol-4" onclick="display('-')">-</button>
+            <button id="clear" class="buttons brow-4 clear" onclick="clr()">C</button>
         </div>
     </div>
+
+    <script>
+        function display(val) {
+            document.getElementById('textarea').value += val
+        }
+        function result() {
+            var answer = eval(textarea.value)
+            document.getElementById('textarea').value = answer
+        }
+        function clr(){
+            document.getElementById('textarea').value=""
+        }
+    </script>
 
 </body>
 
