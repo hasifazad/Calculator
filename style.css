@@ -1,0 +1,52 @@
+.calculator{
+    width: 250px;
+    height: 350px;
+    background: wheat;
+    padding: 20px;
+    border-radius: 5px;
+    margin: auto;
+    position: relative;
+    top: 100px;
+  }
+  
+  .textarea{
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  box-shadow:5px 5px 5px rgba(0, 0, 0, 0.1);
+  font-size: 20px;
+  }
+
+
+  /*---------------------button styling------------------*/
+
+  .buttons{
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    box-shadow:5px 5px 5px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+  }
+  
+  .brow-2,.brow-3,.brow-4{
+    margin-top: 10px;
+  }
+  .bcol-2,.bcol-3,.bcol-4{
+  margin-left: 10px;
+  }
+  
+  .button{
+    margin-top: 20px;
+  }
+  
+  .buttons:hover{
+    background: darkgrey;
+  }
+
+  .clear{
+    margin-left: 130px;
+    width: 113px;
+  }
+  /*------------------------------------------------------*/
