@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="secondCalculator.css">
 </head>
 
 <body>
 
     <div>
-        <a href="secondCalculator.html">Click me</a>
+        <a href="index.html">Click me</a>
     </div>
 
     <div class="calculator">
@@ -21,43 +21,73 @@
             <button id="b-1" class="buttons brow-1 bcol-1" onclick="display(1)">1</button>
             <button id="b-2" class="buttons brow-1 bcol-2" onclick="display(2)">2</button>
             <button id="b-3" class="buttons brow-1 bcol-3" onclick="display(3)">3</button>
-            <button id="b-div" class="buttons brow-1 bcol-4" onclick="display('/')">/</button>
+            <button id="b-div" class="buttons brow-1 bcol-4" onclick="operation('div')">/</button>
             <br>
             <button id="b-4" class="buttons brow-2 bcol-1" onclick="display(4)">4</button>
             <button id="b-5" class="buttons brow-2 bcol-2" onclick="display(5)">5</button>
             <button id="b-6" class="buttons brow-2 bcol-3" onclick="display(6)">6</button>
-            <button id="b-mul" class="buttons brow-2 bcol-4" onclick="display('*')">*</button>
+            <button id="b-mul" class="buttons brow-2 bcol-4" onclick="operation('mul')">*</button>
             <br>
             <button id="b7" class="buttons brow-3 bcol-1" onclick="display(7)">7</button>
             <button id="b8" class="buttons brow-3 bcol-2" onclick="display(8)">8</button>
             <button id="b9" class="buttons brow-3 bcol-3" onclick="display(9)">9</button>
-            <button id="b-add" class="buttons brow-3 bcol-4" onclick="display('+')">+</button>
+            <button id="b-add" class="buttons brow-3 bcol-4" onclick="operation('add')">+</button>
             <br>
             <button id="b0" class="buttons brow-4 bcol-1" onclick="display(0)">0</button>
             <button id="bdot" class="buttons brow-4 bcol-2" onclick="display('.')">.</button>
             <button id="b-equal" class="buttons brow-4 bcol-3" onclick="result()">=</button>
-            <button id="b-sub" class="buttons brow-4 bcol-4" onclick="display('-')">-</button>
+            <button id="b-sub" class="buttons brow-4 bcol-4" onclick="operation('sub')">-</button>
             <button id="clear" class="buttons brow-4 clear" onclick="clr()">C</button>
         </div>
     </div>
 
     <script>
+
+        var num1, num2, answer, op
+
         function display(val) {
             if (document.getElementById('textarea').value == 'Infinity') {
                 document.getElementById('textarea').value = ''
-            }
-            if (document.getElementById('textarea').value == 'undefined') {
+            } if (document.getElementById('textarea').value == 'NaN') {
+                document.getElementById('textarea').value = ''
+            } if (document.getElementById('textarea').value == 'undefined') {
                 document.getElementById('textarea').value = ''
             }
             document.getElementById('textarea').value += val
+
         }
+
+        function operation(operand) {
+            num1 = document.getElementById('textarea').value
+            op = operand
+            document.getElementById('textarea').value = ''
+        }
+
         function result() {
-            var answer = eval(textarea.value)
+            num2 = document.getElementById('textarea').value
+            document.getElementById('textarea').value = ''
+            num1 = parseInt(num1)
+            num2 = parseInt(num2)
+            if (op == 'add') {
+                answer = num1 + num2
+            } else if (op == 'sub') {
+                answer = num1 - num2
+            } else if (op == 'mul') {
+                answer = num1 * num2
+            } else if (op == 'div') {
+                answer = num1 / num2
+            }
             document.getElementById('textarea').value = answer
+            op = null
+            num1 = null
+            num2 = null
+            answer = null
         }
+
         function clr() {
-            document.getElementById('textarea').value = ""
+            document.getElementById('textarea').value = ''
         }
+
     </script>
 </body>
 
