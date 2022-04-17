@@ -39,17 +39,22 @@
 
     <script>
         function display(val) {
+            if (document.getElementById('textarea').value == 'Infinity') {
+                document.getElementById('textarea').value = ''
+            }
+            if (document.getElementById('textarea').value == 'undefined') {
+                document.getElementById('textarea').value = ''
+            }
             document.getElementById('textarea').value += val
         }
         function result() {
             var answer = eval(textarea.value)
             document.getElementById('textarea').value = answer
         }
-        function clr(){
-            document.getElementById('textarea').value=""
+        function clr() {
+            document.getElementById('textarea').value = ""
         }
     </script>
-
 </body>
 
 </html>
